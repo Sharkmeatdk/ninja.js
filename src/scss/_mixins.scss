@@ -1,0 +1,82 @@
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+         -o-transition: $transition;
+       -moz-transition: $transition;
+            transition: $transition;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin border-radius-top($radius) {
+  -webkit-border-top-left-radius: $radius;
+ -webkit-border-top-right-radius: $radius;
+        -o-border-radius-topleft: $radius;
+       -o-border-radius-topright: $radius; 
+      -moz-border-radius-topleft: $radius;
+     -moz-border-radius-topright: $radius;
+          border-top-left-radius: $radius;
+         border-top-right-radius: $radius;
+}
+
+@mixin border-radius-left($radius) {
+     -webkit-border-top-left-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+         -moz-border-radius-topleft: $radius;
+      -moz-border-radius-bottomleft: $radius;
+             border-top-left-radius: $radius;
+          border-bottom-left-radius: $radius;
+}
+
+@mixin border-radius-right($radius) {
+    -webkit-border-top-right-radius: $radius;
+ -webkit-border-bottom-right-radius: $radius;
+        -moz-border-radius-topright: $radius;
+     -moz-border-radius-bottomright: $radius;
+            border-top-right-radius: $radius;
+         border-bottom-right-radius: $radius;
+}
+
+@mixin transition-element($element, $time, $easing) {
+ -webkit-transition: $element $time $easing;
+    -moz-transition: $element $time $easing;
+	  -o-transition: $element $time $easing;
+	 -ms-transition: $element $time $easing;
+		 transition: $element $time $easing;
+}
+
+@mixin fade-background-color($time, $easing) {
+  -webkit-transition: background-color $time $easing;
+      -ms-transition: background-color $time $easing;
+          transition: background-color $time $easing;	
+}
+
+@mixin fade-fill($time, $easing) {
+  -webkit-transition: fill $time $easing;
+      -ms-transition: fill $time $easing;
+          transition: fill $time $easing;	
+}
+
+@mixin rotate-element($deg) {
+ -webkit-transform: rotate($deg);
+    -moz-transform: rotate($deg);
+      -o-transform: rotate($deg);
+     -ms-transform: rotate($deg);
+         transform: rotate($deg);
+}
+
+@mixin box-shadow($posx, $posy, $blur, $spread, $color) {
+    -webkit-box-shadow: $posx $posy $blur $spread $color;
+       -moz-box-shadow: $posx $posy $blur $spread $color;
+            box-shadow: $posx $posy $blur $spread $color;
+}
+
+@mixin box-shadow-none() {
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+}

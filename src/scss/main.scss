@@ -1,0 +1,334 @@
+// reset that browser init stuff
+@import './modules/reset';
+
+// my mixin toolbag
+@import './_mixins';
+
+// my mixin toolbag
+@import './_theme';
+
+// google fonts - lazy font import
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,900;1,900&display=swap');
+
+// Methodology: modular resilient SASS - with BEM naming, bootstrap dashes and project prefixing (Example: Mdn for Maersk Developer Network)
+// Never write css that hit global, except for initial reset. Style within an outer class of the element and think of it as a selfcontained component.
+//
+// Class naming:
+// Ideal : prefix-block-element--modifier
+// Example: .lr-leftmenu-logo--active {
+
+html {
+  width: 100%;
+  height: 100%;
+}  
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: $font-primary;
+  background-color: $neutral;
+}  
+
+#root{
+  width: 100%;
+  height: auto;
+}
+
+.lr-search {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 640px;
+  padding-top: 20px;
+  
+  .lr-search-input {
+    display: block;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 1px solid $secondary;
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: inherit;
+    height: auto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 40px;
+    min-height: 40px;
+    width: calc(100% - 40px);
+    padding-left: 20px;
+    padding-right: 20px;
+    color: $secondary;
+    font-family: $font-primary;
+    @include transition-element(all, 0.3s, ease-in-out);
+  }
+
+  .lr-search-input:disabled {
+    background-color: $disabled;
+  }
+}
+
+.lr-pagination {
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 648px;
+
+  .lr-page-item-link {
+    background-color: $color4;
+    border: 0.1rem solid $color4;
+    border-radius: 6px;
+    color: $neutral;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    height: auto;
+    min-width: 3rem;
+    line-height: 2rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin: 0.2rem;
+    @include transition-element(all, 0.3s, ease-in-out);
+  
+    &.lr-page-item-link--active {
+      background-color: $neutral;
+      border: 0.1rem solid $color1;
+      color: $color1;
+    }
+  }
+}
+
+.lr-list {
+  margin: 0px 20px 0px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 680px;
+  max-height: 0px;
+  overflow: hidden;
+  @include transition-element(max-height, 0.3s, ease-in-out);
+
+  .lr-list-inner {
+    position: relative;
+    width: 100%;
+    height: 600px;
+  }
+
+  &.lr-list-0 {
+    max-height: 140px;
+  }
+            
+  &.lr-list-1 {
+    max-height: 140px;
+  }
+  
+  &.lr-list-2 {
+    max-height: 250px;
+  }
+  
+  &.lr-list-3 {
+    max-height: 360px;
+  }
+  
+  &.lr-list-4 {
+    max-height: 470px;
+  }
+  
+  &.lr-list-5 {
+    max-height: 580px;
+  }
+
+  .lr-list-noresult {
+    font-family: $font-secondary;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 800;
+    letter-spacing: -0.1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $secondary;
+    padding: 20px;
+    padding-bottom: 2px;
+    text-shadow: 0 1px 2px hsla(0, 0%, 50%, 0.6);
+  }
+}
+
+.lr-row {
+  position: relative;
+  margin: 20px;
+  background: $color1;
+  background: linear-gradient(0deg, $color1 0%, $color2 60%, $color3 100%); 
+  @include box-shadow(0px, 1px, 4px, 0px,rgba(0,0,0,0.6));
+
+  .lr-row-name {
+    font-family: $font-secondary;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 800;
+    letter-spacing: -0.1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $secondary;
+    padding: 20px;
+    padding-bottom: 2px;
+    text-shadow: 0 1px 2px hsla(0, 0%, 50%, 0.6);
+  }
+
+  .lr-row-email {
+    display: inline-block;
+    font-family: $font-secondary;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+    color: $color5;
+    padding: 20px;
+    padding-top: 0px;
+    text-shadow: 0 1px 2px hsla(0, 0%, 50%, 0.6);
+  }
+
+  .lr-row-more {
+    display: block;
+    font-family: $font-secondary;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    line-height: 20px;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.1rem;
+    text-decoration: underline;
+    color: $secondary;
+    text-shadow: 0 1px 2px hsla(0, 0%, 50%, 0.6);
+  }
+}
+
+.lr-loader {
+  display: block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+
+  .lr-loader-text {
+    color: $color6;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    margin-top: -15px;
+    margin-left: -30px;
+    text-align: center;
+    z-index: 10;
+    text-shadow: 0 1px 2px hsla(0, 0%, 50%, 0.6);
+  }
+
+  .lr-loader-ring {
+    position: absolute;
+    border: 4px solid $color7;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lr-loader 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+
+  .lr-loader-ring:nth-child(2) {
+    animation-delay: -0.5s;
+  }
+}
+
+@keyframes lr-loader {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width:680px){
+
+  .lr-row {
+
+    .lr-row-name {
+      font-size: 18px;
+      line-height: 20px;
+      padding-top: 10px;
+    }
+  
+    .lr-row-email {
+      font-size: 12px;
+      line-height: 16px;
+      padding-bottom: 10px;
+    }
+
+    .lr-row-more {
+      top: 6px;
+      right: 14px;
+      line-height: 20px;
+      font-size: 12px;
+      letter-spacing: -.02rem;
+    }
+
+  }
+  
+  .lr-search {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .lr-pagination {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .lr-list {
+
+    .lr-list-noresult {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 800;
+      letter-spacing: -.02rem;
+    }
+  
+    &.lr-list-0 {
+      max-height: 100px;
+    }
+              
+    &.lr-list-1 {
+      max-height: 100px;
+    }
+    
+    &.lr-list-2 {
+      max-height: 180px;
+    }
+    
+    &.lr-list-3 {
+      max-height: 260px;
+    }
+    
+    &.lr-list-4 {
+      max-height: 340px;
+    }
+    
+    &.lr-list-5 {
+      max-height: 420px;
+    }
+  }
+}
